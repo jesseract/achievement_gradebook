@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209194513) do
+ActiveRecord::Schema.define(version: 20150209195352) do
 
   create_table "achievements", force: :cascade do |t|
     t.string  "achievement_description"
     t.integer "points"
+  end
+
+  create_table "achievements_students", force: :cascade do |t|
+    t.integer "achievement_id"
+    t.integer "student_id"
   end
 
   create_table "parents", force: :cascade do |t|
