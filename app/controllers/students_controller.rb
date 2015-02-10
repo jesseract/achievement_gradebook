@@ -38,6 +38,7 @@ class StudentsController < ApplicationController
       end
     end
   end
+
   def show
     redirect_to teachers_path
   end
@@ -51,7 +52,11 @@ class StudentsController < ApplicationController
     params[:achievements].keys.each do |achievement_id|
       @student.achievements << Achievement.find_by_id(achievement_id)
     end
-    redirect_to edit_achievements_student_path
+    if @student.save
+      redirect_to student_path, notice: "Achievement successfully updated"
+    else
+      redirect_to edit_achievements_student_path
+    end
   end
 
   private
