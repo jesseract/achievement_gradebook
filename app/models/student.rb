@@ -6,6 +6,9 @@ class Student < ActiveRecord::Base
 
   belongs_to :teacher
 
+  has_and_belongs_to_many :achievements
+
+
   def self.get_all_children_for_teacher_id( teacher_id )
     teachers_children = []
 
