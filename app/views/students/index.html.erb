@@ -12,3 +12,4 @@
 </section>
 
 <%= link_to 'Change your password', edit_student_path(Student.find_by(id: session[:student_id] )) %>
+<%= link_to 'Achievements', edit_achievements_student_path(student) %>
